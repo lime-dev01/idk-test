@@ -1,4 +1,33 @@
-/* Styles spécifiques à la page d'accueil */
+:root {
+  --bg-color: #1C211E;       /* Vert olive / gris béton sombre */
+  --accent-color: #F3E600;   /* Jaune chantier / signalétique */
+  --text-main: #EAEAEA;      /* Blanc cassé brut */
+  --text-muted: #8C938E;     /* Gris technique pour les détails */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Space Grotesk', sans-serif, monospace;
+  line-height: 1.5;
+}
+
+/* Liens et navigation */
+a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -30,6 +59,7 @@
   padding-bottom: 4px;
 }
 
+/* Grille de la page d'accueil */
 .hero-section {
   display: grid;
   grid-template-columns: 2fr 1fr;
