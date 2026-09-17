@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRUT // ARCHITECTURE - Accueil</title>
+    <title>ATELIER VECTR // ARCHITECTURE</title>
+    <!-- Import d'une police plus travaillée et pro -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-          --bg-color: #1C211E;       /* Vert olive / gris béton sombre */
-          --accent-color: #F3E600;   /* Jaune chantier / signalétique */
-          --text-main: #EAEAEA;      /* Blanc cassé brut */
-          --text-muted: #8C938E;     /* Gris technique pour les détails */
+          --bg-color: #16221E;       /* Un vrai vert profond, riche et respirant */
+          --bg-card: #1E2D28;        /* Vert légèrement plus clair pour structurer */
+          --accent-color: #F3E600;   /* Jaune signalétique précis */
+          --text-main: #F4F4F2;      /* Blanc cassé lumineux */
+          --text-muted: #9BA8A2;     /* Gris-vert technique et élégant */
         }
 
         * {
@@ -21,30 +24,32 @@
         body {
           background-color: var(--bg-color);
           color: var(--text-main);
-          font-family: monospace, sans-serif;
-          line-height: 1.5;
+          font-family: 'Syne', sans-serif;
+          line-height: 1.6;
         }
 
         a {
           color: var(--text-main);
           text-decoration: none;
+          transition: color 0.3s ease;
         }
 
         a:hover {
           color: var(--accent-color);
         }
 
+        /* Navigation haut de gamme */
         .site-header {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 2rem 4rem;
-          border-bottom: 1px solid rgba(234, 234, 234, 0.1);
+          padding: 2.5rem 5rem;
+          border-bottom: 1px solid rgba(244, 244, 242, 0.1);
         }
 
         .logo {
-          font-weight: bold;
-          font-size: 1.2rem;
+          font-weight: 800;
+          font-size: 1.3rem;
           letter-spacing: 2px;
         }
 
@@ -54,91 +59,100 @@
 
         .nav-links {
           display: flex;
-          gap: 2rem;
-          font-size: 0.9rem;
-          letter-spacing: 1px;
+          gap: 3rem;
+          font-size: 0.85rem;
+          letter-spacing: 2px;
+          font-family: 'JetBrains Mono', monospace;
         }
 
         .nav-links a.active {
           color: var(--accent-color);
-          border-bottom: 2px solid var(--accent-color);
-          padding-bottom: 4px;
         }
 
+        /* Section Hero avec espace photo pro */
         .hero-section {
           display: grid;
-          grid-template-columns: 2fr 1fr;
-          min-height: calc(100vh - 100px);
-          padding: 4rem;
-          gap: 4rem;
+          grid-template-columns: 1.2fr 1fr;
+          min-height: calc(100vh - 110px);
+          padding: 5rem;
+          gap: 5rem;
           align-items: center;
         }
 
         .tag {
           color: var(--accent-color);
-          font-family: monospace;
-          font-size: 0.9rem;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.85rem;
           letter-spacing: 2px;
+          display: inline-block;
+          margin-bottom: 1rem;
         }
 
         .hero-content h1 {
           font-size: 4rem;
-          line-height: 1.1;
-          margin: 1.5rem 0;
+          line-height: 1.05;
+          margin-bottom: 1.5rem;
           font-weight: 800;
           text-transform: uppercase;
+          letter-spacing: -1px;
         }
 
         .hero-content p {
           color: var(--text-muted);
-          max-width: 500px;
-          margin-bottom: 2rem;
+          font-size: 1.1rem;
+          max-width: 520px;
+          margin-bottom: 2.5rem;
+          font-weight: 400;
         }
 
         .btn-primary {
           display: inline-block;
           background-color: var(--accent-color);
           color: var(--bg-color);
-          padding: 1rem 2rem;
-          font-weight: bold;
+          padding: 1.1rem 2.5rem;
+          font-weight: 700;
+          font-size: 0.9rem;
           letter-spacing: 1px;
           border: none;
-          transition: opacity 0.2s ease;
+          cursor: pointer;
+          transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
-          opacity: 0.85;
-          color: var(--bg-color);
+          background-color: var(--text-main);
+          transform: translateY(-2px);
         }
 
-        .hero-sidebar {
-          border-left: 1px solid rgba(234, 234, 234, 0.1);
-          padding-left: 3rem;
+        /* Cadre réservé pour une superbe photo de projet */
+        .hero-image-container {
+          width: 100%;
+          height: 500px;
+          background-color: var(--bg-card);
+          border: 1px solid rgba(244, 244, 242, 0.12);
+          position: relative;
           display: flex;
-          flex-direction: column;
-          gap: 3rem;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
         }
 
-        .info-block {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-
-        .info-block .label {
-          font-size: 0.8rem;
+        /* Simulation de l'emplacement photo (à remplacer par une balise <img> plus tard) */
+        .hero-image-container::before {
+          content: "ESPACE VISUEL PROJET // INTÉGRER PHOTO ICI";
           color: var(--text-muted);
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.8rem;
           letter-spacing: 1px;
+          text-align: center;
+          padding: 2rem;
         }
-
-        .info-block .value {
-          font-family: monospace;
-          font-size: 1rem;
-        }
-
-        .info-block .value.highlight {
-          color: var(--accent-color);
-        }
+      
+        /* Optionnel si tu veux glisser une vraie image plus tard :
+        .hero-image-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        } */
     </style>
 </head>
 <body>
@@ -146,36 +160,30 @@
     <!-- Header / Navigation -->
     <header class="site-header">
         <div class="logo">
-            <span>BRUT //</span> ARCHI
+            <span>VECTR //</span> ARCHI
         </div>
         <nav class="nav-links">
             <a href="index.html" class="active">ACCUEIL</a>
-            <a href="apropos.html">BIOGRAPHIE</a>
-            <a href="projets.html">PROJETS</a>
+            <a href="apropos.html">STUDIO</a>
+            <a href="projets.html">RÉALISATIONS</a>
             <a href="contact.html">CONTACT</a>
         </nav>
     </header>
 
-    <!-- Section Hero Asymétrique -->
+    <!-- Section Hero Asymétrique & Immersive -->
     <main class="hero-section">
         <div class="hero-content">
-            <span class="tag">01 // MANIFESTE STRUCTUREL</span>
-            <h1>ESPACES BRUTS, <br>MATIÈRES VRAIES.</h1>
-            <p>Conception architecturale et structurelle radicale. Refus du superflu, mise en valeur de la matière brute et de la géométrie pure.</p>
+            <span class="tag">01. MANIFESTE & DIRECTION ARTISTIQUE</span>
+            <h1>L'ARCHITECTURE COMME ESSENCE.</h1>
+            <p>Atelier VECTR conçoit des espaces singuliers où la rigueur structurelle rencontre la pureté des matériaux contemporains. Une approche radicale et pérenne de l'habiter.</p>
             <div class="hero-actions">
-                <a href="projets.html" class="btn-primary">VOIR LES PROJETS</a>
+                <a href="projets.html" class="btn-primary">DÉCOUVRIR LES PROJETS</a>
             </div>
         </div>
         
-        <div class="hero-sidebar">
-            <div class="info-block">
-                <span class="label">COORDONNÉES</span>
-                <span class="value">48.8566° N, 2.3522° E</span>
-            </div>
-            <div class="info-block">
-                <span class="label">STATUT</span>
-                <span class="value highlight">DISPONIBLE POUR CHANTIER</span>
-            </div>
+        <!-- Espace dédié pour une belle photo d'architecture -->
+        <div class="hero-image-container">
+            <!-- Insère ton image ici : <img src="ton-image.jpg" alt="Projet Archi"> -->
         </div>
     </main>
 
